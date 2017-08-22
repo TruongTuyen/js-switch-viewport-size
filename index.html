@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://demo.wpwagon.com/preview/alpha-store-free-wordpress-theme-ecommerce -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Demo Site</title>
+
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+	<style>
+		body {
+			height: calc(100% - 51px);
+			box-sizing: content-box;
+			min-height: 600px;
+		}
+		
+		.download a {
+			background-color: #02a0dc;
+			background-image: none;
+			border-color: #02a0dc;	}
+		.download a:hover {
+			background-color: #0080b1;
+		}
+	</style>
+</head>
+<body>
+
+<div id="switcher">
+		<div class="center">
+            <div class="logo">
+                <a href="http://bewisebuyer.com/">
+					<img class="logo" src="" alt="wpWagon" style="max-height: 38px;margin-top: 0px;">
+				</a>
+            </div>
+            				
+                <ul>
+                    <li id="theme_list">
+                    	<a id="theme_select" href="http://bewisebuyer.com/">View All Themes</a>
+                    </li>	
+                </ul>
+                <div class="responsive">
+                    <a href="http://bewisebuyer.com/" class="desktop" title="View Desktop Version"></a> 
+                    <a href="http://bewisebuyer.com/" class="tabletlandscape" title="View Tablet Landscape (1024x768)"></a> 
+                    <a href="http://bewisebuyer.com/" class="tabletportrait" title="View Tablet Portrait (768x1024)"></a> 
+                    <a href="http://bewisebuyer.com/" class="mobilelandscape" title="View Mobile Landscape (480x320)"></a>
+                    <a href="http://bewisebuyer.com/" class="mobileportrait active" title="View Mobile Portrait (320x480)"></a>
+                </div>
+                
+                <ul class="links">
+                    <li class="download">
+                    	<a href="http://bewisebuyer.com/">
+                    		<img src="img/download.png" alt="">
+                    		Download
+                    	</a>
+                    </li>		
+                    <li class="close">
+                    	<a href="http://bewisebuyer.com/">
+                    		<img src="img/cross.png" alt=""> 
+                    		Close
+                    	</a>
+                    </li>		
+                </ul>
+        </div>
+    </div>
+
+    <iframe id="iframe" src="http://bewisebuyer.com/" frameborder="0" width="100%" style="width: 340px;"></iframe>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    	var IS_IPAD=navigator.userAgent.match(/iPad/i)!=null;
+    	$("#header-bar").hide();
+			clicked="desktop";
+			var t= {
+				desktop:"100%",tabletlandscape:1040,tabletportrait:788,mobilelandscape:500,mobileportrait:340,placebo:0
+			}
+			;
+			jQuery(".responsive a").on("click",function() {
+				var e=jQuery(this);
+				for (device in t) {
+					if(e.hasClass(device)) {
+						clicked=device;
+						jQuery("#iframe").width(t[device]);
+						if(clicked==device) {
+							jQuery(".responsive a").removeClass("active");
+							e.addClass("active")
+						}
+					}
+				}
+				return false
+			}
+			);
+			if(IS_IPAD) {
+				$("#iframe").css("padding-bottom","60px")
+			}
+    </script>
+
+	 	
+
+</body></html>
